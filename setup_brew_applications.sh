@@ -17,10 +17,11 @@ if ! command -v brew &>/dev/null; then
     echo $PASSWORD | sudo -S cd # work around to allow NONINTERACTIVE=1
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     wait
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    wait
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-wait
+
 
 brew install --no-quarantine expect tldr speedtest-cli fd tree stats git yarn nvm zsh bat lsd imagemagick python3 hudochenkov/sshpass/sshpass
 wait
