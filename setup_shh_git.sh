@@ -30,13 +30,6 @@ expect \"Enter passphrase for\"
 send \"$PASSWORD\r\"
 expect eof
 "
-
-git config --global user.name "$FULLNAME"
-wait
-
-git config --global user.email "$EMAIL"
-wait
-
 pbcopy <~/.ssh/id_ed25519.pub
 
 echo "SSH key copied to clipboard!"
