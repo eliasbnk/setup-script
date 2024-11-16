@@ -3,11 +3,9 @@
 SETTINGS_FILE="$HOME/Library/Application Support/Code/User/settings.json"
 
 open -a "Visual Studio Code"
-
 echo 'export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"' >>~/.zprofile
-wait
 source ~/.zprofile
-wait
+
 
 SETTINGS_DIR="$(dirname "$SETTINGS_FILE")"
 if [ ! -d "$SETTINGS_DIR" ]; then
